@@ -15,3 +15,8 @@ Stage 1 (Licence Plate Detection)
     -	[ ] Crop image and send to second stage
 
 Stage 2 (Optical Character Recognition)
+- [ ]	Load the OCR dataset
+- [ ]	Build a CNN (Convolutional Neural Network)
+- [ ]	Train the network
+- [ ]	Check network accuracy and adjust parameters for higher accuracy
+- [ ]	Use validation set to test the network

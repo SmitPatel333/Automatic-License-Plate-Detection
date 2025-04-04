@@ -1,11 +1,11 @@
 clc; clear; close all;
 
 % Load the trained network from the file
-loadedData = load('new_license_plate_cnn_model.mat');
+loadedData = load('newest_license_plate_cnn_model.mat');
 dlNet = loadedData.net;  % Extract the dlnetwork object
 
 % Load the new image
-newImage = imread('char_6.png');
+newImage = imread('char_3.png');
 
 % Convert to grayscale if necessary
 if size(newImage, 3) == 3  % Check if image is RGB
@@ -15,10 +15,10 @@ end
 newImage = imopen(newImage, strel('disk', 1)); % Remove noise
 
 % Resize the image to match the network's input size
-newImage = imresize(newImage, [30 27]);
+newImage = imresize(newImage, [60 40]);
 
 % Add a singleton channel dimension to make it [30, 27, 1]
-newImage = reshape(newImage, [30, 27, 1]);
+newImage = reshape(newImage, [60, 40, 1]);
 
 imshow(newImage);
 

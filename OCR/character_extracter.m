@@ -1,6 +1,6 @@
 clc; clear; close all;
 
-img = imread('licenseplate.png');
+img = imread('test_plate_10.tif');
 gray_img = rgb2gray(img);  % Convert to grayscale
 
 gray_img = imadjust(gray_img);  % Enhance contrast
@@ -17,7 +17,7 @@ charRegions = [];
 for i = 1:length(stats)
     bbox = stats(i).BoundingBox;
     aspect_ratio = bbox(3) / bbox(4);  % Width/Height
-    if stats(i).Area > 100 && aspect_ratio < 1.5  % Adjust conditions
+    if stats(i).Area > 500 && aspect_ratio < 1.5  % Adjust conditions
         charRegions = [charRegions; bbox];
     end
 end
